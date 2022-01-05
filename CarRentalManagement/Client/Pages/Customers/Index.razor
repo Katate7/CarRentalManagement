@@ -6,6 +6,14 @@
 
 
 <h3 class="card-title">Car Customers</h3>
+<br />
+<a href="/customers/create" class="btn btn-secondary">
+    <span class="oi oi-plus"></span>
+    Create New Customer
+</a>
+<br />
+<br />
+
 
 @if (Customers == null)
 {
@@ -32,10 +40,10 @@ else
                     <td>@customer.ContactNumber</td>
                     <td>@customer.EmailAddress</td>
                     <td>
-                        <a href="/customer/view/@customer.Id" class="btn btn-primary">
+                        <a href="/customers/view/@customer.Id" class="btn btn-primary">
                             <span class="oi oi-book"></span>
                         </a>
-                        <a href="/customer/edit/@customer.Id" class="btn btn-warning">
+                        <a href="/customers/edit/@customer.Id" class="btn btn-warning">
                             <span class="oi oi-pencil"></span>
                         </a>
                         <button class="btn btn-danger" @onclick="@(()=>Delete(customer.Id))">
@@ -44,7 +52,7 @@ else
                     </td>
                 </tr>
 
-                
+
 
 
             }
