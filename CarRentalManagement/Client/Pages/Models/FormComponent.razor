@@ -1,21 +1,24 @@
 ﻿<EditForm Model="@model" OnValidSubmit="@OnValidSubmit">
     <DataAnnotationsValidator />
     <ValidationSummary />
-    <div class="form-group">
-        <label>Name: </label>
-        <div>
-            <InputText @bind-Value="@model.Name" class="form-control" />
-            <ValidationMessage For="@(() => model.Name)" />
+    <fieldset disabled="@Disabled">
+        <div class="form-group">
+            <label>Name: </label>
+            <div>
+                <InputText @bind-Value="@model.Name" class="form-control" />
+                <ValidationMessage For="@(() => model.Name)" />
+            </div>
         </div>
-    </div>
-    @if (!Disabled)
-    {
-        <button type="submit" class="btn btn-success btn-block">
-            @ButtonText
-        </button>
+    </fieldset>
+        @if (!Disabled)
+        {
+            <button type="submit" class="btn btn-success btn-block">
+                @ButtonText
+            </button>
 
-    }
-    <BackToList Target="models" />
+        }
+
+        <BackToList Target="models" />
 </EditForm>
 
 @code{
